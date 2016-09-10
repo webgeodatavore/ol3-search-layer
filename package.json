@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server",
-    "lint:js": "eslint src/js/",
+    "lint:js": "eslint src/js/ examples/control-ol3-search-layer.js",
     "standalone:browserify:debug": "browserify -s ol.SearchLayer src/js/index.js > dist/ol3-search-layer.js",
     "standalone:browserify": "browserify -s ol.SearchLayer src/js/index.js |uglifyjs > dist/ol3-search-layer.min.js",
     "build:css": "cleancss src/css/ol3-search-layer.css > dist/ol3-search-layer.min.css",
