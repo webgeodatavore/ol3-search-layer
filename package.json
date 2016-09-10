@@ -1,0 +1,38 @@
+{
+  "name": "ol3-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server",
+    "lint:js": "eslint src/js/",
+    "standalone:browserify:debug": "browserify -s ol.SearchLayer src/js/index.js > dist/ol3-search-layer.js",
+    "standalone:browserify": "browserify -s ol.SearchLayer src/js/index.js |uglifyjs > dist/ol3-search-layer.min.js",
+    "build:css": "cleancss src/css/ol3-search-layer.css > dist/ol3-search-layer.min.css",
+    "build:css:debug": "cp src/css/ol3-search-layer.css dist/ol3-search-layer.css",
+    "prod": "npm run standalone:browserify && npm run build:css",
+    "debug": "npm run standalone:browserify:debug && npm run build:css:debug",
+    "all": "npm run prod && npm run debug"
+  },
+  "browser": "dist/ol3-search-layer.js",
+  "style": [
+    "css/ol3-search-layer.css"
+  ],
+  "keywords": [
+    "openlayers",
+    "search",
+    "horsey"
+  ],
+  "author": "Thomas Gratier",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "budo": "^9.0.0",
+    "clean-css": "^3.4.19",
+    "eslint": "^3.4.0",
+    "eslint-config-openlayers": "^5.0.0",
+    "http-server": "^0.9.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
