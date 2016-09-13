@@ -89,7 +89,10 @@ function SearchLayer(optOptions) {
   var returnHorsey = function(input, source, map, select, options) {
     horsey(input, {
       source: [{
-        list: source.getFeatures().map(function(el) {
+        list: source.getFeatures().map(function(el, i) {
+          if (el.getId() === undefined) {
+            el.setId(i);
+          }
           return {
             text: el.get(options.colName),
             value: el.getId() // If GeoJSON has an id
