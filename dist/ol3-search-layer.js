@@ -84,7 +84,7 @@ function SearchLayer(optOptions) {
   ];
 
   var typesToZoomToCenterAndZoom = [
-    'point'
+    'Point'
   ];
   var returnHorsey = function(input, source, map, select, options) {
     horsey(input, {
