@@ -39,7 +39,7 @@ function SearchLayer(optOptions) {
 
   var form = document.createElement('form');
   form.setAttribute('id', 'random');
-  form.onsubmit = undefined;
+  form.onsubmit = function(){return false};
   // form.setAttribute('action', 'javascript:void(0);');
 
   var input = document.createElement('input');
